@@ -1,36 +1,20 @@
 package model;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-
 import java.util.Date;
 
 public class Item {
-    @SerializedName("type")
-    @Expose
-    private String type;
+    private Page page;
 
-    @SerializedName("name")
-    @Expose
     private String name;
 
-    @SerializedName("price")
-    @Expose
-    private Float price;
+    private String price;
 
-    @SerializedName("currency")
-    @Expose
-    private String currency;
-
-    @SerializedName("date")
-    @Expose
     private Date date;
 
-    public Item(String type, String name, Float price, String currency) {
-        this.type = type;
+    public Item(Page page,String name, String price) {
+        this.page=page;
         this.name = name;
         this.price = price;
-        this.currency = currency;
         this.date = new Date();
     }
 
@@ -45,20 +29,12 @@ public class Item {
         this.name = name;
     }
 
-    public Float getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(Float price) {
+    public void setPrice(String price) {
         this.price = price;
-    }
-
-    public String getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(String currency) {
-        this.currency = currency;
     }
 
     public Date getDate() {
@@ -69,11 +45,11 @@ public class Item {
         this.date = date;
     }
 
-    public String getType() {
-        return type;
+    public Page getPage() {
+        return page;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setPage(Page page) {
+        this.page = page;
     }
 }
